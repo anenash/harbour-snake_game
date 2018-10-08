@@ -26,10 +26,6 @@ GameBoard::GameBoard(QObject *parent) : QObject(parent)
 
 
     clearBoard();
-
-//    connect(&m_apple, Apple::newApple(), [this]() {
-//        randomApple();
-//    });
 }
 
 void GameBoard::clearBoard()
@@ -47,6 +43,7 @@ void GameBoard::start()
 {
     m_currentDirection = GameBoard::Up;
     QPoint startPoint;
+    m_snake.reset();
     int x = BoardWidth / 2;
     int y = BoardHeight / 2;
     for (int i = 2; i >= 0; i--)
@@ -127,6 +124,7 @@ void GameBoard::moveSnake()
         if (m_apple.compare(currPoint))
         {
             m_score += 100;
+            emit scoreChanged(m_score);
             m_snake.add(currPoint);
             randomApple();
             m_apples++;
@@ -144,7 +142,6 @@ void GameBoard::moveSnake()
         }
         emit snakeMove();
         updateBoard();
-        emit scoreChanged(m_score);
     }
     else {
         m_timer.stop();

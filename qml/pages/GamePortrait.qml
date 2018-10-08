@@ -28,6 +28,17 @@ Item {
         }
     }
 
+    Rectangle {
+        id: gameFieldBorder
+
+        anchors.centerIn: game
+        width: game.width + Theme.horizontalPageMargin
+        height: game.height + Theme.horizontalPageMargin
+        color: "transparent"
+        border.color: "black"
+        border.width: 4
+    }
+
     Item {
         id: game
 

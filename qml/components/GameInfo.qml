@@ -22,18 +22,22 @@ Rectangle {
         Text {
             text: "Hi-Score"            
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
         }
         Text {
             text: gameHightScore
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
         }
         Text {
             text: "Score"
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
         }
         Text {
             text: snakeGame.score
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
         }
         Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -58,24 +62,29 @@ Rectangle {
         Text {
             text: "Level"
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
         }
         Text {
             text: snakeGame.level
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
         }
         Text {
             text: "Pause"
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
             opacity: snakeGame.started ? snakeGame.paused ? 1.0 : 0.3 : 0.3
         }
         Text {
             text: "Mute"
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
             opacity: snakeGame.muted ? 1.0 : 0.3
         }
         Text {
-            text: "Game\n   over"
+            text: "Game over"
             font.family: lcdFont.name
+            font.pixelSize: Theme.fontSizeTiny
             opacity: gameOver ? 1.0 : 0.3
         }
     }
